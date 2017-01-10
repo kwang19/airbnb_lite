@@ -28,7 +28,7 @@
       <% @listings.each do |listing| %>
       <tr>
         <td><%= listing.title %></td>
-        <td><%= listing.photos %></td>
+        <td><img src='<%= listing.photos %>' class='img-responsive'></td>
         <td><%= listing.description %></td>
         <td><%= listing.host.email %></td>
         <td><%= listing.privateroomorentirehome %></td>
