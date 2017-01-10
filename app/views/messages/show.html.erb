@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Listings</dt>
-      <dd><%= @message.listings_id %></dd>
+      <dd>
+        <% if @message.listings.present? %>
+          <a href="/listings/<%= @message.listings_id %>">
+            <%= @message.listings.title %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Guests</dt>
-      <dd><%= @message.guests_id %></dd>
+      <dd>
+        <% if @message.guests.present? %>
+          <a href="/guests/<%= @message.guests_id %>">
+            <%= @message.guests.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Datetime</dt>
       <dd><%= @message.datetime %></dd>

@@ -18,8 +18,20 @@
       <% @bookings.each do |booking| %>
       <tr>
         <td><%= booking.available %></td>
-        <td><%= booking.guests.created_at %></td>
-        <td><%= booking.listings.title %></td>
+        <td>
+          <% if booking.guests.present? %>
+            <a href="/guests/<%= booking.guests.id %>">
+              <%= booking.guests.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if booking.listings.present? %>
+            <a href="/listings/<%= booking.listings.id %>">
+              <%= booking.listings.title %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/bookings/<%= booking.id %>" class="btn btn-primary">Show</a>
           <a href="/bookings/<%= booking.id %>/edit" class="btn btn-warning">Edit</a>

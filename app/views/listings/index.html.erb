@@ -30,7 +30,13 @@
         <td><%= listing.title %></td>
         <td><img src='<%= listing.photos %>' class='img-responsive'></td>
         <td><%= listing.description %></td>
-        <td><%= listing.host.email %></td>
+        <td>
+          <% if listing.host.present? %>
+            <a href="/hosts/<%= listing.host.id %>">
+              <%= listing.host.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= listing.privateroomorentirehome %></td>
         <td><%= listing.number_of_bedrooms %></td>
         <td><%= listing.number_of_bathrooms %></td>

@@ -22,7 +22,13 @@
 
       <% @bookingreviews.each do |bookingreview| %>
       <tr>
-        <td><%= bookingreview.bookings.available %></td>
+        <td>
+          <% if bookingreview.bookings.present? %>
+            <a href="/bookings/<%= bookingreview.bookings.id %>">
+              <%= bookingreview.bookings.available %>
+            </a>
+          <% end %>
+        </td>
         <td><%= bookingreview.accuracy %></td>
         <td><%= bookingreview.communication %></td>
         <td><%= bookingreview.cleanliness %></td>

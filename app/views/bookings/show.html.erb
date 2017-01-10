@@ -9,10 +9,22 @@
       <dd><%= @booking.available %></dd>
 
       <dt>Guests</dt>
-      <dd><%= @booking.guests_id %></dd>
+      <dd>
+        <% if @booking.guests.present? %>
+          <a href="/guests/<%= @booking.guests_id %>">
+            <%= @booking.guests.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Listings</dt>
-      <dd><%= @booking.listings_id %></dd>
+      <dd>
+        <% if @booking.listings.present? %>
+          <a href="/listings/<%= @booking.listings_id %>">
+            <%= @booking.listings.title %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
