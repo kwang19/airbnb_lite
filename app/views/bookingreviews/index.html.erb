@@ -22,7 +22,7 @@
 
       <% @bookingreviews.each do |bookingreview| %>
       <tr>
-        <td><%= bookingreview.bookings_id %></td>
+        <td><%= bookingreview.bookings.available %></td>
         <td><%= bookingreview.accuracy %></td>
         <td><%= bookingreview.communication %></td>
         <td><%= bookingreview.cleanliness %></td>
