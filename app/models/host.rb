@@ -1,6 +1,9 @@
 class Host < ApplicationRecord
   # Direct associations
 
+  has_many   :guests,
+             :dependent => :destroy
+
   has_many   :listings,
              :dependent => :destroy
 
