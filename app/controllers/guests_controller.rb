@@ -6,6 +6,9 @@ class GuestsController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
+    @message = Message.new
+    @booking = Booking.new
     @guest = Guest.find(params[:id])
 
     render("guests/show.html.erb")
