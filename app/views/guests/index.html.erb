@@ -16,7 +16,7 @@
 
       <% @guests.each do |guest| %>
       <tr>
-        <td><%= guest.host_id %></td>
+        <td><%= guest.host.email %></td>
         <td><%= guest.user_id %></td>
         <td>
           <a href="/guests/<%= guest.id %>" class="btn btn-primary">Show</a>
