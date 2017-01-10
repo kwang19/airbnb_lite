@@ -1,5 +1,7 @@
 ActiveAdmin.register Message do
 
+ permit_params :listings_id, :guests_id, :datetime, :content
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
